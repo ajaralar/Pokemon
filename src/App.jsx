@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { getRandomPokemon } from "./utils/getRandomPokemon"
 
 function App() {
   return (
     <>
       <p>Hello</p>
+      <button onClick={getRandomPokemon}>Random Pokemon</button>
     </>
   )
 }

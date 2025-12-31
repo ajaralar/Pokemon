@@ -1,10 +1,17 @@
+import { useState } from "react"
 import { getRandomPokemon } from "./utils/getRandomPokemon"
 
 function App() {
+  const [pokemon, setPokemon] = useState({})
+  const generatePokemon = async () => {
+    const data = await getRandomPokemon()
+    setPokemon(data)
+  }
+
   return (
     <>
-      <p>Hello</p>
-      <button onClick={getRandomPokemon}>Random Pokemon</button>
+      <button onClick={generatePokemon}>Random Pokemon</button>
+      {pokemon && <h1>{pokemon.name}</h1>}
     </>
   )
 }
